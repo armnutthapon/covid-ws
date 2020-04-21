@@ -6,10 +6,11 @@ $(function () {
     for (var country in result) {
       var row = `<tr>
                         <th scope="row">${no}</th>
-                        <td><a href="country.html?country=${country}">${country}</a></td>
+                        <td><a href="country2.html?country=${country}">${country}</a></td>
                  </tr>`;
       $("#data").append(row);
       no++;
     }
   });
 });
+
