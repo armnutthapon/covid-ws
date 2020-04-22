@@ -79,6 +79,7 @@ $(function () {
 
 
 
+ 
     var totalcon1 = [], totalcon2 = [], totalcon3 = [], totalcon4 = [], totalcon5 = [], totalcon6 = [];
     var totalweek1 = [], totalweek2 = [], totalweek3 = [], totalweek4 = [], totalweek5 = [], totalweek6 = [];
     $.getJSON(url, function (result) {
