@@ -79,12 +79,18 @@ $(function () {
 
 
 
- 
-    var totalcon1 = [], totalcon2 = [], totalcon3 = [], totalcon4 = [], totalcon5 = [], totalcon6 = [];
+
+    var totalconfirmed1 = [], totalconfirmed2 = [], totalconfirmed3 = [], totalconfirmed4 = [], totalconfirmed5 = [], totalconfirmed6 = [];
+    var totalrecovered1 = [], totalrecovered2 = [], totalrecovered3 = [], totalrecovered4 = [], totalrecovered5 = [], totalrecovered6 = [];
+    var totaldeaths1 = [], totaldeaths2 = [], totaldeaths3 = [], totaldeaths4 = [], totaldeaths5 = [], totaldeaths6 = [];
+
     var totalweek1 = [], totalweek2 = [], totalweek3 = [], totalweek4 = [], totalweek5 = [], totalweek6 = [];
+
     $.getJSON(url, function (result) {
 
       var c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0;
+      var r1 = 0, r2 = 0, r3 = 0, r4 = 0, r5 = 0, r6 = 0;
+      var d1 = 0, d2 = 0, d3 = 0, d4 = 0, d5 = 0, d6 = 0;
       for (var country in result) {
 
         var selectedCountry = result[country];
@@ -97,6 +103,20 @@ $(function () {
         c5 = c5 + selectedCountry[total - 28].confirmed;
         c6 = c6 + selectedCountry[total - 35].confirmed;
 
+        r1 = r1 + selectedCountry[total - 1].recovered;
+        r2 = r2 + selectedCountry[total - 7].recovered;
+        r3 = r3 + selectedCountry[total - 14].recovered;
+        r4 = r4 + selectedCountry[total - 21].recovered;
+        r5 = r5 + selectedCountry[total - 28].recovered;
+        r6 = r6 + selectedCountry[total - 35].recovered;
+
+        d1 = d1 + selectedCountry[total - 1].deaths;
+        d2 = d2 + selectedCountry[total - 7].deaths;
+        d3 = d3 + selectedCountry[total - 14].deaths;
+        d4 = d4 + selectedCountry[total - 21].deaths;
+        d5 = d5 + selectedCountry[total - 28].deaths;
+        d6 = d6 + selectedCountry[total - 35].deaths;
+
         week1 = selectedCountry[total - 1].date;
         week2 = selectedCountry[total - 7].date;
         week3 = selectedCountry[total - 14].date;
@@ -107,13 +127,20 @@ $(function () {
 
       }
 
-      totalcon1.push(c1), totalcon2.push(c2), totalcon3.push(c3), totalcon4.push(c4),
-        totalcon5.push(c5), totalcon6.push(c6)
+      totalconfirmed1.push(c1), totalconfirmed2.push(c2), totalconfirmed3.push(c3), totalconfirmed4.push(c4),
+        totalconfirmed5.push(c5), totalconfirmed6.push(c6)
 
-      totalweek1.push(week1), totalweek2.push(week2),totalweek3.push(week3),
-        totalweek4.push(week4),totalweek5.push(week5),totalweek6.push(week6)
+      totalrecovered1.push(r1), totalrecovered2.push(r2), totalrecovered3.push(r3), totalrecovered4.push(r4),
+        totalrecovered5.push(r5), totalrecovered6.push(r6)
 
-        
+      totaldeaths1.push(d1), totaldeaths2.push(d2), totaldeaths3.push(d3), totaldeaths4.push(d4),
+        totaldeaths5.push(d5), totaldeaths6.push(d6)
+
+
+      totalweek1.push(week1), totalweek2.push(week2), totalweek3.push(week3),
+        totalweek4.push(week4), totalweek5.push(week5), totalweek6.push(week6)
+
+
 
 
 
@@ -121,21 +148,21 @@ $(function () {
       var myLineChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: [totalweek6,totalweek5,totalweek4,totalweek3,totalweek2,totalweek1],
+          labels: [totalweek6, totalweek5, totalweek4, totalweek3, totalweek2, totalweek1],
           datasets: [{
             label: "Confirmed : ",
             lineTension: 0.3,
             backgroundColor: "rgba(246, 194, 62, 0.5)",
             borderColor: "rgba(246, 194, 62, 1)",
             pointRadius: 3,
-            pointBackgroundColor: "rgba(231, 74, 59, 1)",
-            pointBorderColor: "rgba(231, 74, 59, 1)",
+            pointBackgroundColor: "rgba(78, 115, 223, 1)",
+            pointBorderColor: "rgba(78, 115, 223, 1)",
             pointHoverRadius: 3,
-            pointHoverBackgroundColor: "rgba(231, 74, 59, 1)",
-            pointHoverBorderColor: "rgba(231, 74, 59, 1)",
+            pointHoverBackgroundColor: "rgba(28, 200, 138, 1)",
+            pointHoverBorderColor: "rgba(246, 194, 62, 1)",
             pointHitRadius: 10,
             pointBorderWidth: 2,
-            data: [totalcon6, totalcon5, totalcon4, totalcon3, totalcon2,totalcon1],
+            data: [totalconfirmed6, totalconfirmed5, totalconfirmed4, totalconfirmed3, totalconfirmed2, totalconfirmed1],
           }],
         },
         options: {
@@ -207,6 +234,183 @@ $(function () {
       });
 
 
+
+      var ctx = document.getElementById("myAreaChart2");
+      var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [totalweek6, totalweek5, totalweek4, totalweek3, totalweek2, totalweek1],
+          datasets: [{
+            label: "Confirmed : ",
+            lineTension: 0.3,
+            backgroundColor: "rgba(28, 200, 138, 0.5)",
+            borderColor: "rgba(28, 200, 138, 1)",
+            pointRadius: 3,
+            pointBackgroundColor: "rgba(78, 115, 223, 1)",
+            pointBorderColor: "rgba(78, 115, 223, 1)",
+            pointHoverRadius: 3,
+            pointHoverBackgroundColor: "rgba(28, 200, 138 1)",
+            pointHoverBorderColor: "rgba(28, 200, 138, 1)",
+            pointHitRadius: 10,
+            pointBorderWidth: 2,
+            data: [totaldeaths6, totaldeaths5, totaldeaths4, totaldeaths3, totaldeaths2, totaldeaths1],
+          }],
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              left: 10,
+              right: 25,
+              top: 25,
+              bottom: 0
+            }
+          },
+          scales: {
+            xAxes: [{
+              time: {
+                unit: 'date'
+              },
+              gridLines: {
+                display: false,
+                drawBorder: false
+              },
+              ticks: {
+                maxTicksLimit: 7
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                maxTicksLimit: 5,
+                padding: 10,
+                // Include a dollar sign in the ticks
+                callback: function (value, index, values) {
+                  return number_format(value);
+                }
+              },
+              gridLines: {
+                color: "rgb(234, 236, 244)",
+                zeroLineColor: "rgb(234, 236, 244)",
+                drawBorder: false,
+                borderDash: [2],
+                zeroLineBorderDash: [2]
+              }
+            }],
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            backgroundColor: "rgb(255,255,255)",
+            bodyFontColor: "#858796",
+            titleMarginBottom: 10,
+            titleFontColor: '#6e707e',
+            titleFontSize: 14,
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            xPadding: 15,
+            yPadding: 15,
+            displayColors: false,
+            intersect: false,
+            mode: 'index',
+            caretPadding: 10,
+            callbacks: {
+              label: function (tooltipItem, chart) {
+                var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                return datasetLabel + number_format(tooltipItem.yLabel);
+              }
+            }
+          }
+        }
+      });
+      var ctx = document.getElementById("myAreaChart3");
+      var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [totalweek6, totalweek5, totalweek4, totalweek3, totalweek2, totalweek1],
+          datasets: [{
+            label: "Confirmed : ",
+            lineTension: 0.3,
+            backgroundColor: "rgba(231, 74, 59, 0.5)",
+            borderColor: "rgba(231, 74, 59, 1)",
+            pointRadius: 3,
+            pointBackgroundColor: "rgba(78, 115, 223, 1)",
+            pointBorderColor: "rgba(78, 115, 223, 1)",
+            pointHoverRadius: 3,
+            pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+            pointHoverBorderColor: "rgba(231, 74, 59, 1)",
+            pointHitRadius: 10,
+            pointBorderWidth: 2,
+            data: [totalrecovered6, totalrecovered5, totalrecovered4, totalrecovered3, totalrecovered2, totalrecovered1],
+          }],
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              left: 10,
+              right: 25,
+              top: 25,
+              bottom: 0
+            }
+          },
+          scales: {
+            xAxes: [{
+              time: {
+                unit: 'date'
+              },
+              gridLines: {
+                display: false,
+                drawBorder: false
+              },
+              ticks: {
+                maxTicksLimit: 7
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                maxTicksLimit: 5,
+                padding: 10,
+                // Include a dollar sign in the ticks
+                callback: function (value, index, values) {
+                  return number_format(value);
+                }
+              },
+              gridLines: {
+                color: "rgb(234, 236, 244)",
+                zeroLineColor: "rgb(234, 236, 244)",
+                drawBorder: false,
+                borderDash: [2],
+                zeroLineBorderDash: [2]
+              }
+            }],
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            backgroundColor: "rgb(255,255,255)",
+            bodyFontColor: "#858796",
+            titleMarginBottom: 10,
+            titleFontColor: '#6e707e',
+            titleFontSize: 14,
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            xPadding: 15,
+            yPadding: 15,
+            displayColors: false,
+            intersect: false,
+            mode: 'index',
+            caretPadding: 10,
+            callbacks: {
+              label: function (tooltipItem, chart) {
+                var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                return datasetLabel + number_format(tooltipItem.yLabel);
+              }
+            }
+          }
+        }
+      });recovered
 
 
     });

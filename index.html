@@ -31,7 +31,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -194,47 +194,77 @@
 
           </div>
 
-
-          <div class="col-xl-12 col-lg-5">
-            <div class="card shadow mb-4">
-              <!-- Card Header - Dropdown -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h3 class="m-0 font-weight-bold text-primary">Graph</h3>
-              </div>
-              <!-- Card Body -->
-              <div class="card-body">
-                <div class="chart-pie pt-4 pb-2">
-                  <canvas id="myPieChart"></canvas>
+          <div class="row">
+            <div class="col-xl-8 col-lg-5">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Confirmed Chart</h6>
                 </div>
-                <div class="mt-4 text-center small">
-                  <span class="mr-2">
-                    <i class="fas fa-circle text-warning"></i> TOTAL CONFIRMED
-                  </span>
-                  <span class="mr-2">
-                    <i class="fas fa-circle text-danger"></i> TOTAL DEATHS
-                  </span>
-                  <span class="mr-2">
-                    <i class="fas fa-circle text-success"></i> TOTAL RECOVERED
-                  </span>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h3 class="m-0 font-weight-bold text-primary">Graph</h3>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-warning"></i> TOTAL CONFIRMED
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-danger"></i> TOTAL DEATHS
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> TOTAL RECOVERED
+                    </span>
 
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-xl-12 col-lg-5">
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Confirmed Chart</h6>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="myAreaChart"></canvas>
+
+
+          <div class="row">
+            <div class="col-xl-6 col-lg-5">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Recovered Chart</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart2"></canvas>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div class="col-xl-6 col-lg-5">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Deaths Chart</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart3"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <!-- /.container-fluid -->
 
