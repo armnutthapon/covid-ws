@@ -31,7 +31,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -64,7 +64,7 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="servy.html">
+        <a class="nav-link" href="survey.html">
           <i class="fas fa-fw fa-stethoscope"></i>
           <span>Self Assessment</span></a>
       </li>
@@ -112,10 +112,10 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle"  id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nutthapon Nisakon</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="img/profile.jpg">
               </a>
 
             </li>
@@ -128,18 +128,23 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="m-0 font-weight-bold text-primary">Country List</h1>
-
-          <div class="container">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Country</th>
-                </tr>
-              </thead>
-              <tbody id="data"></tbody>
-            </table>
+          <h1 class="m-0 font-weight-bold text-dark">Country List</h1>
+          <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <div class="container mt-5">
+                <div class="container">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Country</th>
+                      </tr>
+                    </thead>
+                    <tbody id="data"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -147,7 +152,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2019</span>
+              <span>Nutthapon Nisakon Covid-19 Dashboard</span>
             </div>
           </div>
         </footer>

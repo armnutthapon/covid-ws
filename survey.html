@@ -31,7 +31,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -65,7 +65,7 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="servy.html">
+        <a class="nav-link" href="survey.html">
           <i class="fas fa-fw fa-stethoscope"></i>
           <span>Self Assessment</span></a>
       </li>
@@ -97,25 +97,45 @@
             <div class="col-lg-12">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="m-0 font-weight-bold text-primary">Self Assessment</h1>
+                  <h1 class="m-0 font-weight-bold text-dark">Self Assessment</h1>
+                  <br>
                 </div>
-                <form class="user">
+                <form action="index.html" class="needs-validation" novalidate>
                   <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" placeholder="First Name" required>
+                    <div class="col-sm-6">
+                      <label>First Name</label>
+                      <input type="text" class="form-control form-control-user" required>
+                      <div class="invalid-feedback">
+                        Please fill in your first name
+                      </div>
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" placeholder="Last Name" required>
+                      <label>Last Name</label>
+                      <input type="text" class="form-control form-control-user" required>
+                      <div class="invalid-feedback">
+                        Please fill in your first name
+                      </div>
                     </div>
+
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-3 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" placeholder="National ID" required>
+                      <label>National ID</label>
+                      <input type="text" class="form-control form-control-user" pattern="[0-9]{13}" required>
+                      <div class="invalid-feedback">
+                        Please fill in your national ID
+                      </div>
                     </div>
                     <div class="col-sm-3">
-                      <input type="text" class="form-control form-control-user" placeholder=" Mobile phone" required>
+                      <label>Mobile Phone</label>
+                      <input type="text" class="form-control form-control-user" pattern="[0-9]{10}" required>
+                      <div class="invalid-feedback">
+                        Please fill in your mobile phone
+                      </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-1"></div>
+                    <div class="col-sm-3">
+                      <br>
                       <div class="radio mr-3">
                         <label><input type="radio" name="optradio" checked />
                           Shareholder or Proxy</label>
@@ -140,7 +160,7 @@
                       </label>
                     </div>
                     <div class="radio ml-3 mr-3">
-                      <label><input type="radio" name="optradio1" /> No</label>
+                      <label><input type="radio" name="optradio1" checked /> No</label>
                     </div>
                   </div>
                   <div class="row mt-2">
@@ -151,7 +171,7 @@
                       </label>
                     </div>
                     <div class="radio ml-3 mr-3">
-                      <label><input type="radio" name="optradio2" /> No</label>
+                      <label><input type="radio" name="optradio2" checked /> No</label>
                     </div>
                   </div>
                   <div class="row mt-2">
@@ -165,7 +185,7 @@
                       </label>
                     </div>
                     <div class="radio ml-3 mr-3">
-                      <label><input type="radio" name="optradio3" /> No</label>
+                      <label><input type="radio" name="optradio3" checked /> No</label>
                     </div>
                   </div>
                   <div class="row mt-2">
@@ -178,64 +198,80 @@
                       </label>
                     </div>
                     <div class="radio ml-3 mr-3">
-                      <label><input type="radio" name="optradio4" /> No</label>
+                      <label><input type="radio" name="optradio4" checked /> No</label>
                     </div>
                   </div>
                   <br>
                   <hr>
-                  <div class="row mt-6">
+                  <div class="row mt-6 text-center">
                     <div class="col-md-3"></div>
                     During last 14 days, have you travelled from or transited in any
                     country ?
-                  </div><br>
+                    <br><br>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                        <label><input type="radio" name="during" onclick="yes()"> Yes</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                        <label><input type="radio" name="during" onclick="no()" checked> No</label>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
                   <div class="row">
                     <div class="col-md-3"></div>
                     <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> China</label>
+                      <label><input type="checkbox" name="optradio5" id="china" disabled /> China</label>
                     </div>
                     <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> Macao</label>
+                      <label><input type="checkbox" name="optradio5" id="macao" disabled /> Macao</label>
                     </div>
                     <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> Hong Kong</label>
+                      <label><input type="checkbox" name="optradio5" id="hong" disabled /> Hong Kong</label>
                     </div>
                     <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> South Korea</label>
+                      <label><input type="checkbox" name="optradio5" id="korea" disabled /> South Korea</label>
                     </div>
                     <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> Iran </label>
+                      <label><input type="checkbox" name="optradio5" id="iran" disabled /> Iran </label>
                     </div>
-                    <div class="radio mr-3">
-                      <label><input type="radio" name="optradio5" /> No</label>
+
+                  </div>
+                  <hr>
+
+                  <div class="row mt-6 text-center">
+                    During last 14 days, have you close contact those who came back
+                    from the area affected by the outtbreacks of COVID-19 or history of close contact with a
+                    confirmed case of COVID-19 infection ?
+                    <br><br>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                        <label><input type="radio" name="optradio6" /> Yes</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="radio ml-3 mr-3">
+                        <label><input type="radio" name="optradio6" checked /> No</label>
+                      </div>
                     </div>
                   </div>
                   <hr>
-                  <center>
-                    <div class="row mt-6">
-                      During last 14 days, have you close contact those who came back
-                      from the area affected by the outtbreacks of COVID-19 or history of close contact with a
-                      confirmed case of COVID-19 infection ?
-                      <br><br>
-                      <div class="col-md-3">
-                        <div class="radio ml-3 mr-3">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="radio ml-3 mr-3">
-                          <label><input type="radio" name="optradio6" /> Yes</label>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="radio ml-3 mr-3">
-                          <label><input type="radio" name="optradio6" /> No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </center>
-                  <hr>
+
                   <div class="row mt-4">
                     <div class="col-md-5"></div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-md-5"> <button type="reset" class="btn btn-danger"> Reset</button>
+                    </div>
                   </div>
                 </form>
 
@@ -247,6 +283,7 @@
     </div>
 
   </div>
+  
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -257,7 +294,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-<script src="/js/validation.js"></script>
+  <script src="js/validation.js"></script>
+
+
 
 </body>
 

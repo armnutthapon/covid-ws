@@ -76,10 +76,6 @@ $(function () {
       },
     });
 
-
-
-
-
     var totalconfirmed1 = [], totalconfirmed2 = [], totalconfirmed3 = [], totalconfirmed4 = [], totalconfirmed5 = [], totalconfirmed6 = [];
     var totalrecovered1 = [], totalrecovered2 = [], totalrecovered3 = [], totalrecovered4 = [], totalrecovered5 = [], totalrecovered6 = [];
     var totaldeaths1 = [], totaldeaths2 = [], totaldeaths3 = [], totaldeaths4 = [], totaldeaths5 = [], totaldeaths6 = [];
